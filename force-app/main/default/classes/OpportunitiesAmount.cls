@@ -1,5 +1,5 @@
 public with sharing class OpportunitiesAmount {
-    public OpportunitiesAmount() {
+    public Decimal OpportunitiesAmount() {
         List<Opportunity> opportunities = [SELECT Amount FROM Opportunity];
         Integer listSize = opportunities.size();
         Decimal total = 0;
