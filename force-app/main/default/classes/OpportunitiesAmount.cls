@@ -1,5 +1,6 @@
 public with sharing class OpportunitiesAmount {
-    public Decimal OpportunitiesAmount() {
+    @AuraEnabled(cacheable=true)
+    public static Decimal getOpportunitiesAmountTotal() {
         List<Opportunity> opportunities = [SELECT Amount FROM Opportunity];
         Integer listSize = opportunities.size();
         Decimal total = 0;
